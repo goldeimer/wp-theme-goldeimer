@@ -1,0 +1,41 @@
+@use '../../lib/breakpoint';
+
+%container-parallax-info-base {
+    position: absolute;
+
+	max-width: 80%;
+}
+
+@mixin _containerParallaxInfo(
+    $offset,
+    $width
+) {
+    top: #{$offset};
+    left: #{$offset};
+
+    width: #{$width};
+}
+
+.container-parallax-info {
+    @extend %container-parallax-info-base;
+
+    @include _containerParallaxInfo(25px, 400px);
+
+    @include breakpoint.up(sm) {
+        @include _containerParallaxInfo(50px, 400px);
+    }
+
+    @include breakpoint.up(lg) {
+        @include _containerParallaxInfo(100px, 500px);
+    }
+
+    &-large {
+        @extend %container-parallax-info-base;
+
+        @include _containerParallaxInfo(50px, 700px);
+
+        @include breakpoint.up(lg) {
+            @include _containerParallaxInfo(100px, 700px);
+        }
+    }
+}

@@ -1,0 +1,22 @@
+@use '../../lib/breakpoint';
+@use '../../lib/container';
+@use '../../lib/palette';
+
+.blog-box {
+    @extend %container-base-padding;
+
+    @include breakpoint.up(md) {
+        padding: 50px 100px !important;
+    }
+
+    @include breakpoint.up(lg) {
+        padding: 100px 100px !important;
+    }
+
+    p {
+        @include container.anchor(
+            palette.get(light, text, primary),
+            palette.get(light, text, contrast)
+        );
+    }
+}

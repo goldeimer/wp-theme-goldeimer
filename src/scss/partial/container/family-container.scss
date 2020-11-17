@@ -1,0 +1,13 @@
+@use '../../lib/flex';
+
+.family-container {
+    @extend %flex-wrap-align-start;
+
+    img {
+        width: 15%;
+        min-width: 200px;
+        height: auto;
+
+        margin: auto;
+    }
+}

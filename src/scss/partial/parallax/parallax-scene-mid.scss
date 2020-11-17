@@ -1,0 +1,13 @@
+@use '../../lib/breakpoint';
+
+.parallax-scene-mid {
+    left: -10% !important;
+
+    @include breakpoint.up(sm) {
+        left: -5% !important;
+    }
+
+    @include breakpoint.up(md) {
+        left: 0% !important;
+    }
+}

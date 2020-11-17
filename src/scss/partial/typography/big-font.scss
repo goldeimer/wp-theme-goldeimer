@@ -1,0 +1,8 @@
+@use '../../lib/typography' as *;
+
+.bigfont {
+    @include typography(h2);
+
+    line-height: 1 !important;
+    text-align: center !important;
+}

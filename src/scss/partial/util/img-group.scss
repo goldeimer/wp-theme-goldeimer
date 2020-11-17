@@ -1,0 +1,20 @@
+@use '../../lib/breakpoint';
+
+@mixin _padding($vert) {
+    padding: 0 #{$vert} !important;
+}
+
+.img-group {
+    display: flex;
+    flex-flow: row wrap;
+
+    @include _padding(25px);
+
+    @include breakpoint.up(sm) {
+        @include _padding(30px);
+    }
+
+    @include breakpoint.up(lg) {
+        @include _padding(80px);
+    }
+}

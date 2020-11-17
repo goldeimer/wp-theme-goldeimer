@@ -1,0 +1,107 @@
+@use '../../lib/breakpoint';
+@use '../../lib/container';
+
+%content-box-base {
+    ul {
+        font-size: 17px !important;
+        margin-bottom: 15px !important;
+        line-height: 1.6 !important;
+    }
+}
+
+@mixin contentBox(
+    $backgroundColor,
+    $textColor
+) {
+    @extend %content-box-base;
+
+    background-color: #{$backgroundColor};
+    color: #{$textColor};
+
+    p {
+        @include container.anchor(
+            $textColor,
+            $backgroundColor
+        );
+    }
+
+    strong {
+        color: #{$textColor} !important;
+    }
+
+    @content;
+}
+
+%content-box-black-base {
+    @include contentBox(#000, #fff);
+}
+
+%content-box-white-base {
+    @include contentBox(#fff, #000);
+}
+
+%content-box-yellow-base {
+    @include contentBox(#ffe500, #000) {
+        p {
+            /* TODO: Why is this different from white and black? */
+            margin-bottom: 25px !important;
+        }
+    }
+}
+
+.content-box-black {
+    @extend %container-center-padding;
+    @extend %content-box-black-base;
+}
+
+.content-box-black-left {
+    @extend %container-left-padding;
+    @extend %content-box-black-base;
+}
+
+.content-box-black-right {
+    @extend %container-right-padding;
+    @extend %content-box-black-base;
+}
+
+.content-box-white {
+    @extend %container-center-padding;
+    @extend %content-box-white-base;
+}
+
+.content-box-white-left {
+    @extend %container-left-padding;
+    @extend %content-box-white-base;
+}
+
+/**
+ * TODO(Johannes): Needed?
+ * */
+.content-box-white-pb {
+    @extend %container-center-padding;
+    @extend %content-box-white-base;
+
+    @include breakpoint.up(lg) {
+        padding: 50px 100px !important;
+    }
+}
+
+.content-box-white-right {
+    @extend %container-right-padding;
+    @extend %content-box-white-base;
+}
+
+.content-box-yellow {
+    @extend %container-center-padding;
+    @extend %content-box-yellow-base;
+}
+
+.content-box-yellow-left {
+    @extend %container-left-padding;
+    @extend %content-box-yellow-base;
+}
+
+.content-box-yellow-right {
+    @extend %container-right-padding;
+    @extend %content-box-yellow-base;
+}

@@ -1,0 +1,82 @@
+@use 'breakpoint';
+@use 'font';
+
+%container-anchor-base {
+    @include font.museo();
+
+    /**
+     * TODO(Johannes):
+     * `.content-box-black` set `padding: 0px 2px !important;` here.
+     * Dunno why.
+     * Clarify w/ @Manou.
+     */
+    padding: 2px !important;
+
+    font-size: 15px;
+    text-transform: uppercase;
+    text-decoration: underline !important;
+
+    &:hover{
+        text-decoration: none !important;
+    }
+}
+
+@mixin anchor(
+    $textColor,
+    $contrastColor
+) {
+    a {
+        @extend %container-anchor-base;
+
+        color: #{$textColor} !important;
+
+        &:hover {
+            color: #{$contrastColor} !important;
+            background-color: #{$textColor} !important;
+        }
+    }
+}
+
+%container-base-padding {
+    padding: 25px !important;
+
+    @include breakpoint.up(sm) {
+        padding: 50px !important;
+    }
+}
+
+%container-center-padding {
+    @extend %container-base-padding;
+
+    @include breakpoint.up(md) {
+        padding: 50px !important;
+    }
+
+    @include breakpoint.up(lg) {
+        padding: 100px !important;
+    }
+}
+
+%container-left-padding {
+    @extend %container-base-padding;
+
+    @include breakpoint.up(md) {
+        padding: 50px 25px 50px 100px !important;
+    }
+
+    @include breakpoint.up(lg) {
+        padding: 100px 50px 100px 150px !important;
+    }
+}
+
+%container-right-padding {
+    @extend %container-base-padding;
+
+    @include breakpoint.up(md) {
+        padding: 50px 100px 50px 25px !important;
+    }
+
+    @include breakpoint.up(lg) {
+        padding: 100px 150px 100px 50px !important;
+    }
+}

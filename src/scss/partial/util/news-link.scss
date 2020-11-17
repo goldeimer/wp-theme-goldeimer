@@ -1,0 +1,11 @@
+@use '../../lib/breakpoint';
+
+@include breakpoint.up(lg) {
+    .news-link {
+        transition: 0.3s;
+
+        &:hover {
+            padding-left: 10px;
+        }
+    }
+}

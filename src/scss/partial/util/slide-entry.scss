@@ -1,0 +1,7 @@
+@use '../../lib/breakpoint';
+
+.slide-entry {
+    @include breakpoint.up(md) {
+        width: 33%;
+    }
+}

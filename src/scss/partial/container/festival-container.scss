@@ -1,0 +1,12 @@
+@use '../../lib/flex';
+
+.festival-container {
+    @extend %flex-wrap-align-start;
+
+    img{
+        width: 120px;
+        height: auto;
+
+        margin: 25px;
+    }
+}

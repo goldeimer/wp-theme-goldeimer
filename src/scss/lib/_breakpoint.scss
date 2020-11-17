@@ -1,0 +1,52 @@
+@function _adjustBy($direction) {
+    @if $direction == up {
+        @return 0;
+    }
+
+    @return 1;
+}
+
+@function _breakpointValue($breakpoint) {
+    @if $breakpoint == xs or $breakpoint == extra-small {
+        @return 480;
+    } @else if $breakpoint == sm or $breakpoint == small {
+        @return 600;
+    } @else if $breakpoint == md or $breakpoint == medium {
+        @return 960;
+    } @else if $breakpoint == lg or $breakpoint == large {
+        @return 1280;
+    } @else if $breakpoint == xl or $breakpoint == extra-large {
+        @return 1920;
+    }
+
+    @return 0;
+}
+
+@function _minMax($direction) {
+    @if $direction == up {
+        @return min;
+    }
+
+    @return max;
+}
+
+@mixin _breakpoint(
+    $breakpoint,
+    $direction
+) {
+    @media only screen and (#{_minMax($direction)}-width: #{_breakpointValue($breakpoint) - _adjustBy($direction)}px) {
+        @content;
+    }
+}
+
+@mixin down($breakpoint) {
+    @include _breakpoint($breakpoint, "down") {
+        @content;
+    }
+}
+
+@mixin up($breakpoint) {
+    @include _breakpoint($breakpoint, "up") {
+        @content;
+    }
+}

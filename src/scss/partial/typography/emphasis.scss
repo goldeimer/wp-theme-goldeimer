@@ -1,0 +1,7 @@
+@use '../../lib/typography';
+
+b {
+    @extend %typography-weight-extra-bold;
+
+    color: inherit !important;
+}

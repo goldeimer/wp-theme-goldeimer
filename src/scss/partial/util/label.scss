@@ -1,0 +1,29 @@
+%_label-base {
+	margin-right: 10px;
+    padding: 5px 10px;
+	border-radius: 5px;
+
+	font-family: Veneer !important;
+	font-size: 12px;
+}
+
+.label-gelb {
+    @extend %_label-base;
+
+	background-color: #ffe500;
+	color: black;
+}
+
+.label-blau {
+    @extend %_label-base;
+
+	background-color: #0090c5;
+	color: white;
+}
+
+.label-gruen {
+    @extend %_label-base;
+
+	background-color: #0CE821;
+	color: black;
+}

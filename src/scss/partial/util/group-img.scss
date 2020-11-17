@@ -1,0 +1,41 @@
+@use '../../lib/breakpoint';
+
+%group-img-base {
+    min-width: none !important;
+    max-width: none !important;
+
+    margin: 0px;
+    padding: 0px;
+
+    width: 100%;
+
+    @include breakpoint.up(xs) {
+        width: 50%;
+    }
+
+    @include breakpoint.up(sm) {
+        width: 33.33%;
+    }
+}
+
+.group-img {
+    &-300 {
+        @extend %group-img-base;
+
+        @include breakpoint.up(md) {
+            width: 20%;
+        }
+    }
+
+    &-400 {
+        @extend %group-img-base;
+
+        @include breakpoint.up(sm) {
+            padding: 20px;
+        }
+
+        @include breakpoint.up(md) {
+            width: 25%;
+        }
+    }
+}

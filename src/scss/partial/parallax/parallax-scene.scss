@@ -1,0 +1,57 @@
+%parallax-img-base {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+}
+
+%parallax-scene-base {
+	bottom: -50%;
+    left: -50%;
+
+	min-width: 200%;
+    height: 150vh;
+
+    .layer {
+        top: 0px;
+        left: 0px;
+    }
+}
+
+.parallax-scene {
+    @extend %parallax-scene-base;
+
+    img {
+        @extend %parallax-img-base;
+
+        bottom: -10%;
+    }
+
+    &-b {
+        @extend %parallax-scene-base;
+
+        background-color:  #46bfd3;
+
+        img {
+            @extend %parallax-img-base;
+
+            width: 100%;
+            height: 100%;
+
+            bottom: 20%;
+        }
+    }
+
+    &-y {
+        @extend %parallax-scene-base;
+
+        background-color: #ffe500;
+
+        img {
+            @extend %parallax-img-base;
+
+            bottom: -10%;
+        }
+    }
+
+}

@@ -1,0 +1,14 @@
+/**
+ * TODO: Obsolete?
+ */
+
+@use '../../lib/breakpoint';
+
+
+.ge-map {
+    height: 500px !important;
+
+    @include breakpoint.up(md) {
+        height: 600px !important;
+    }
+}

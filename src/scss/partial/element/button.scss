@@ -1,0 +1,90 @@
+@use '../../lib/button';
+
+@include button.elementsAndStyle(
+    #000,
+    #fff
+);
+
+%button-wide-margin-base {
+    &:not(:first-child) {
+        margin-bottom: 10px;
+    }
+
+    &:not(:last-child) {
+        margin-bottom: 10px;
+    }
+}
+
+@mixin _buttonContainers(
+    $backgroundColor: #000,
+    $color: #fff,
+    $transparentBackgroundBeforeMouseOver: true
+) {
+    @include button.elementsAndStyle(
+        $backgroundColor,
+        $color,
+        $transparentBackgroundBeforeMouseOver,
+        true
+    );
+
+    &-wide {
+        @include button.elementsAndStyle(
+            $backgroundColor,
+            $color,
+            $transparentBackgroundBeforeMouseOver,
+            true
+        );
+
+        @extend %button-wide-margin-base;
+
+        @include button.elements(true) {
+            width: 75% !important;
+        }
+    }
+
+    &-full {
+        @include button.elementsAndStyle(
+            $backgroundColor,
+            $color,
+            $transparentBackgroundBeforeMouseOver,
+            true
+        );
+
+        @extend %button-wide-margin-base;
+
+        @include button.elements(true) {
+            width: 90% !important;
+        }
+    }
+}
+
+.button-dark-bg,
+.content-box-black {
+    @include _buttonContainers(
+        #000,
+        #fff
+    );
+}
+
+.button-light-bg,
+.content-box-white {
+    @include _buttonContainers(
+        #fff,
+        #000
+    );
+}
+
+.content-box-yellow {
+    @include _buttonContainers(
+        #ffe500,
+        #000
+    );
+}
+
+.button-yellow {
+    @include _buttonContainers(
+        #ffe500,
+        #000,
+        false
+    );
+}

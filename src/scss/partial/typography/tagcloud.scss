@@ -1,0 +1,12 @@
+@use '../../lib/breakpoint';
+
+.tagcloud {
+    a {
+        font-size: 15px !important;
+    }
+}
+
+.tag-cloud-link:hover {
+    background-color: #000 !important;
+    color: #fff !important;
+}

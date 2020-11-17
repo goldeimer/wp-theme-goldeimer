@@ -1,0 +1,25 @@
+/* TODO: import from @goldeimer/font-stack */
+
+@mixin museo() {
+    font-family: Museo, serif !important;
+}
+
+@mixin museoSans() {
+    font-family: MuseoSans, sans-serif !important;
+}
+
+@mixin veneer() {
+    font-family: Veneer, sans-serif !important;
+}
+
+@mixin veneerTwo() {
+    font-family: VeneerTwo, sans-serif !important;
+}
+
+@mixin veneerThree() {
+    font-family: VeneerThree, sans-serif !important;
+}
+
+@mixin veneerExtras() {
+    font-family: VeneerExtras, sans-serif !important;
+}

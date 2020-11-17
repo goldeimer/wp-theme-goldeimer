@@ -1,0 +1,136 @@
+@use 'breakpoint';
+@use 'font';
+
+/**
+ * Utility placeholders
+ */
+
+%typography-weight-normal {
+	font-weight: 300 !important;
+}
+
+%typography-weight-bold {
+	font-weight: 500 !important;
+}
+
+%typography-weight-extra-bold {
+	font-weight: 700 !important;
+}
+
+/**
+ * Variant base placeholders
+ */
+
+%typography-body-base {
+    @include font.museo();
+}
+
+%typography-heading-base {
+    @include font.veneer();
+
+	font-style: normal;
+}
+
+/**
+ * Variant placeholders
+ */
+
+%typography-variant-body,
+%typography-variant-body1,
+%typography-variant-body-1 {
+    @extend %typography-body-base;
+
+    font-size: 15px !important;
+
+    & a {
+        font-size: 15px !important;
+        padding: 2px !important;
+        text-decoration: underline !important;
+        text-transform: uppercase;
+    }
+
+    @include breakpoint.up(sm) {
+        font-size: 17px !important;
+    }
+}
+
+%typography-variant-h1 {
+    @extend %typography-heading-base;
+
+    margin-top: 0 !important;
+    margin-bottom: 10px !important;
+    padding-top: 6px !important;
+
+    font-size: 30px !important;
+
+    @include breakpoint.up(sm) {
+        padding-top: 2px !important;
+
+        font-size: 40px !important;
+    }
+
+    @include breakpoint.up(md) {
+        font-size: 60px !important;
+    }
+
+    @include breakpoint.up(md) {
+        font-size: 70px !important;
+    }
+}
+
+%typography-variant-h2 {
+    @extend %typography-heading-base;
+
+    margin-top: 0 !important;
+    margin-bottom: 10px !important;
+
+    font-size: 25px !important;
+
+    @include breakpoint.up(sm) {
+        font-size: 30px !important;
+    }
+
+    @include breakpoint.up(md) {
+        font-size: 40px !important;
+    }
+}
+
+%typography-variant-h3 {
+    @extend %typography-heading-base;
+
+    margin-top: 0 !important;
+    margin-bottom: 5px !important;
+
+    font-size: 10px !important;
+    letter-spacing: 2px !important;
+    line-height: 1.6 !important;
+}
+
+%typography-variant-h4 {
+    @extend %typography-heading-base;
+}
+
+%typography-variant-h5 {
+    @extend %typography-heading-base;
+}
+
+%typography-variant-h6 {
+    @extend %typography-heading-base;
+}
+
+@mixin typography(
+    $variant: body1,
+    $weight: normal,
+) {
+    @extend %typography-variant-#{$variant};
+
+    @if $weight == bold {
+        @extend %typography-weight-bold;
+    } @else if $weight == extra-bold {
+        @extend %typography-weight-extra-bold;
+    } @else {
+        @extend %typography-weight-normal;
+    }
+
+    @content;
+}

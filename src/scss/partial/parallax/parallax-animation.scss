@@ -1,0 +1,22 @@
+@keyframes swing {
+    0% { transform: rotate(3deg); }
+    100% { transform: rotate(-3deg); }
+}
+
+%swing-transform-origin {
+    transform-origin: center -20px;
+}
+
+@mixin swingAnimation($period) {
+    @extend %swing-transform-origin;
+
+    animation: swing ease-in-out #{$period} infinite alternate;
+}
+
+.swing {
+    @include swingAnimation(5s);
+}
+
+.swingtwo {
+    @include swingAnimation(2.5s);
+}

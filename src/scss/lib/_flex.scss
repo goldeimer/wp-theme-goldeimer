@@ -1,0 +1,17 @@
+%flex-wrap-base {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+%flex-wrap-align-start {
+    @extend %flex-wrap-base;
+
+    align-items: flex-start;
+}
+
+%flex-wrap-align-center {
+    @extend %flex-wrap-base;
+
+    align-items: center;
+}

@@ -1,0 +1,111 @@
+@use '../../lib/button';
+@use '../../lib/palette';
+@use '../../lib/typography';
+
+.nf-form-fields-required {
+    display: none;
+}
+
+.nf-form-content,
+#top .nf-form-content,
+#top .av-inherit-font-color .nf-form-content {
+    padding: 0 !important;
+
+    input[type=email],
+    input[type=text] {
+        height: 42px;
+    }
+
+    input[type=email],
+    input[type=text],
+    textarea {
+        @include typography.typography(body1);
+
+        padding: 5px 8px;
+
+        background-color: #eee;
+        color: palette.get(light, text, primary);
+    }
+
+    label {
+        @include typography.typography(body1);
+    }
+
+    nf-field:last-of-type {
+        .nf-field-container {
+            margin-bottom: 0;
+        }
+    }
+
+    .checkbox-container {
+        .checkbox-wrap {
+            display: block !important;
+
+            .nf-field-description {
+                margin-top: 5px;
+            }
+        }
+    }
+
+    .file_upload-wrap {
+        .nf-field-description {
+            @include typography.typography(body1);
+
+            margin: 20px 0 30px;
+
+            text-align: center;
+        }
+
+        .nf-fu-progress {
+            margin-top: 5px;
+        }
+    }
+
+    .nf-error.field-wrap {
+        .nf-field-element:after {
+            width: 42px;
+            height: 40px;
+            line-height: 42px;
+        }
+    }
+
+    .nf-error-msg {
+        @include typography.typography(body1, bold);
+    }
+
+    .nf-field-element {
+        @include button.elementsAndStyle(
+            #fff,
+            #000,
+            true,
+            false
+        );
+    }
+}
+
+/**
+ * TODO(Johannes):
+ * Temporary hack.
+ * Fix ASAP.
+ */
+
+#top.page-id-16591 {
+    .content-box-white {
+        input[type=email][style],
+        input[type=text][style],
+        textarea[style] {
+            @include typography.typography(body1);
+
+            padding: 5px 8px !important;
+            border-radius: 0 !important;
+
+            background-color: #eee !important;
+            color: palette.get(light, text, primary) !important;
+            border-color: #000 !important;
+        }
+
+        label[style] {
+            @include typography.typography(body1);
+        }
+    }
+}

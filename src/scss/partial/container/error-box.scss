@@ -1,0 +1,39 @@
+/**
+ * "Errorbox" forms
+ *
+ * TODO: Outdated?
+ */
+
+.errorbox {
+	position: fixed;
+	top: -120px;
+    z-index: 1000;
+
+	display: flex;
+    align-items: center;
+	justify-content: center;
+
+    height: auto;
+    width: 100%;
+
+    padding: 40px 40px;
+
+    background-color: #AA6600;
+
+    color: white;
+	font-weight: bold;
+	text-align: center;
+
+	transition: 0.3s;
+}
+
+.errorbox-enabled {
+    position: fixed;
+
+	height: auto;
+    width: 100%;
+
+	background-color: #AA6600;
+	top: 100px !important;
+	z-index: 1000;
+}

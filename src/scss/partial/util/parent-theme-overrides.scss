@@ -1,0 +1,53 @@
+body .av-special-heading .av-special-heading-tag {
+    padding: 0;
+    margin: 0;
+
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.av-special-heading {
+    margin-top: 20px;
+
+    /* TODO: Remove one rule... */
+    &.av-special-heading-tag {
+        font-weight: normal !important;
+    }
+}
+
+.av_toggle_section {
+    p {
+        margin-bottom: 0px !important;
+    }
+}
+
+.avia-section {
+    border: none !important;
+
+    &.av-minimum-height {
+        .container .content p {
+            margin: 0px;
+        }
+    }
+}
+
+.avia_textblock {
+    margin-bottom: 25px !important;
+
+    font-size: 17px !important;
+    line-height: 1.6 !important;
+
+    &.font-size-inherit {
+        font-size: inherit !important;
+    }
+}
+
+.responsive {
+    #top {
+        #wrap_all {
+            .flex_column.no_margin {
+                margin-bottom: 0 !important;
+            }
+        }
+    }
+}

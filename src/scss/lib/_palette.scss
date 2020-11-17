@@ -1,0 +1,45 @@
+@use "sass:map";
+
+$palettes: (
+    "light": (
+        "text": (
+            "primary": #000,
+            "secondary": #727272,
+            "disabled": #9b9b9b,
+            "contrast": #fff
+        )
+    ),
+    "dark": (
+        "text": (
+            "primary": #fff,
+            "secondary": #727272,
+            "disabled": #9b9b9b,
+            "contrast": #000
+        )
+    )
+);
+
+@function get(
+    $palette,
+    $category,
+    $key
+) {
+    $default: #000;
+
+    $_palette: map.get($palettes, $palette);
+    @if not $_palette {
+        @return $default;
+    }
+
+    $_category: map.get($_palette, $category);
+    @if not $_category {
+        @return $default;
+    }
+
+    $_color: map.get($_category, $key);
+    @if not $_color {
+        @return $default;
+    }
+
+    @return $_color;
+}

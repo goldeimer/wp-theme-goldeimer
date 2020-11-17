@@ -1,0 +1,18 @@
+@use '../../lib/typography' as *;
+
+body {
+    @extend %typography-body-base;
+}
+
+a {
+    text-decoration: none !important;
+    font-weight: bold;
+}
+
+p {
+    @include typography(body1);
+
+    margin-bottom: 15px !important;
+
+    line-height: 1.6 !important;
+}

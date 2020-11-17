@@ -1,0 +1,103 @@
+@use 'font';
+
+%button-base {
+    @include font.museo();
+
+    height: auto !important;
+
+    border-width: 2px !important;
+    border-style: solid !important;
+    border-radius: 0px !important;
+
+    letter-spacing: 2px !important;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+
+	cursor: pointer !important;
+
+    transition: 0.3s;
+
+    &:focus {
+        outline: 0;
+    }
+}
+
+%button-background-none {
+    background-color: transparent !important;
+    background: none !important;
+}
+
+%button-disabled {
+    opacity: 0.2 !important;
+}
+
+@mixin style(
+    $backgroundColor: #fff,
+    $color: #000,
+    $transparentBackgroundBeforeMouseOver: true
+) {
+    @extend %button-base;
+
+    @if $transparentBackgroundBeforeMouseOver {
+        @extend %button-background-none;
+    } @else {
+        background-color: #{$backgroundColor} !important;
+    }
+
+    width: auto !important;
+
+    color: #{$color} !important;
+    border-color: #{$color} !important;
+
+    &:hover {
+        background-color: #{$color} !important;
+        color: #{$backgroundColor} !important;
+        opacity: 1 !important;
+    }
+
+    &:disabled,
+    &.disabled {
+        @extend %button-disabled;
+    }
+
+    @content;
+}
+
+@mixin elements($withParentThemeClass: false) {
+    @if $withParentThemeClass {
+        .avia-button,
+        .button,
+        button,
+        input[type=button],
+        input[type=submit] {
+            @content;
+        }
+    } @else {
+        .button,
+        button,
+        input[type=button],
+        input[type=submit] {
+            @content;
+        }
+    }
+}
+
+@mixin elementsAndStyle(
+    $backgroundColor: #fff,
+    $color: #000,
+    $transparentBackgroundBeforeMouseOver: true,
+    $withParentThemeClass: false
+) {
+    @include elements($withParentThemeClass) {
+        @include style(
+            $backgroundColor,
+            $color,
+            $transparentBackgroundBeforeMouseOver
+        );
+    }
+
+    @include elements() {
+        padding: 15px 30px 13px !important;
+    }
+}

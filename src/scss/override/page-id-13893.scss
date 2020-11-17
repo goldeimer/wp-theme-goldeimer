@@ -1,0 +1,23 @@
+@use '../lib/font';
+
+body.page-id-13893 {
+    .container {
+        h1,
+        h2,
+        h4,
+        p,
+        ul li {
+            @include font.museoSans();
+        }
+
+        h4 {
+            color: #fff !important;
+        }
+    }
+
+    footer,
+    .content-box-footer,
+    .social_bookmarks {
+        display: none !important;
+    }
+}

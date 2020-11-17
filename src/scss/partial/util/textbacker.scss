@@ -1,0 +1,40 @@
+.textbacker-container {
+    display: block;
+
+    padding: 20px 0 20px 5px;
+}
+
+.textbacker{
+    position: relative !important;
+
+    display: inline !important;
+
+    line-height: 1.8 !important;
+    white-space: pre-wrap !important;
+
+    border-color: #fff !important;
+    border-style: solid !important;
+    /* 0.25em is roughly equal to one space character. */
+    border-width: 0.5em 0em !important;
+
+    background-color :#fff !important;
+    color: #000 !important;
+
+    &:after{
+        content: "";
+
+        position: absolute !important;
+        top: -0.5em !important;
+        right: 100% !important;
+        bottom: -0.5em !important;
+
+        width: 0.25em !important;
+
+        background-color: #fff !important;
+    }
+
+    & > span{
+        position:relative;
+        z-index:1;
+    }
+}

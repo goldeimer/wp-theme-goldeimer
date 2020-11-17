@@ -1,0 +1,104 @@
+@use '../../lib/breakpoint';
+@use '../../lib/font';
+
+@mixin _padding(
+    $top,
+    $other
+) {
+    padding: #{$top} #{$other} #{$other} !important;
+}
+
+@mixin _contentBoxArgs(
+    $width,
+    $padding
+) {
+    width: #{$width} !important;
+    padding: #{$padding} !important;
+}
+
+#footer {
+    @include _padding(15px, 30px);
+
+    @include breakpoint.up(sm) {
+        @include _padding(30px, 50px);
+    }
+
+    @include breakpoint.up(md) {
+        @include _padding(50px, 80px);
+    }
+
+    @include breakpoint.up(lg) {
+        @include _padding(50px, 100px);
+    }
+
+    a {
+        @include font.museo();
+
+        padding: 2px;
+
+        font-size: 13px;
+        font-weight: 700;
+        line-height: 2;
+        text-transform: uppercase !important;
+
+        color: #000 !important;
+
+        &:hover{
+            background-color: #000 !important;
+            color: #fff !important;
+        }
+    }
+}
+
+.content-box-footer {
+    background-color: #fff;
+    color: #000;
+
+    @include _contentBoxArgs(100%, 25px);
+
+    @include breakpoint.up(sm) {
+        @include _contentBoxArgs(50%, 50px);
+    }
+
+    @include breakpoint.up(md) {
+        @include _contentBoxArgs(33%, 50px);
+    }
+
+    @include breakpoint.up(lg) {
+        @include _contentBoxArgs(25%, 100px);
+    }
+
+    ul {
+        list-style-type: none;
+        margin-left: 0px;
+        padding-left: 0px;
+
+        a {
+            @include font.museo();
+
+            padding: 2px !important;
+
+            font-size: 12px;
+            text-transform: uppercase;
+
+            color: #000 !important;
+
+            &:hover{
+                background-color: #000 !important;
+                color: #fff !important;
+                text-decoration: none !important;
+            }
+        }
+
+        li {
+            margin: 0px;
+        }
+    }
+}
+
+.footer-preis-img {
+    width: 100%;
+    max-width: 240px;
+    min-width: 180px;
+    margin-bottom: 40px !important;
+}

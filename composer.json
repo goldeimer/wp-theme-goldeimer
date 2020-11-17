@@ -1,0 +1,16 @@
+{
+    "name": "goldeimer/wp-theme-goldeimer",
+    "type": "wordpress-theme",
+    "description": "Goldeimer's WordPress theme",
+    "require": {
+        "composer/installers": "^1.8",
+        "goldeimer/wp-util": "^0.2"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.2-dev"
+        }
+    }
+}

@@ -1,0 +1,71 @@
+@use '../../lib/breakpoint';
+@use '../../lib/font';
+
+#header {
+    box-shadow: 0px 10px 20px rgba(0,0,0,0.2);
+    padding: 0px 50px;
+}
+
+@include breakpoint.down(md) {
+    .responsive #top #wrap_all #header {
+        position: fixed !important;
+    }
+
+    .responsive #top #main {
+        padding-top: 80px !important;
+    }
+}
+
+/**
+ * logo
+ */
+
+.av-logo-container {
+    .logo {
+        width: 160px !important;
+
+        a:hover {
+            background-color: #fff !important;
+        }
+    }
+}
+
+/**
+ * nav menu
+ */
+
+#menu-item-search {
+    display: none !important;
+}
+
+.avia-menu-text {
+    @include font.museo();
+
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase !important;
+}
+
+.main_menu {
+    ul:first-child > li > a {
+        @include font.museo();
+
+        font-weight: 700;
+    }
+}
+
+.sub_menu {
+    a {
+        @include font.museo();
+
+        padding: 2px !important;
+
+        text-transform: uppercase;
+
+        &:hover {
+            background-color: #000 !important;
+            color: #fff !important;
+        }
+    }
+}

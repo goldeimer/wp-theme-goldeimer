@@ -1,0 +1,154 @@
+/**
+ * TODO(Johannes):
+ * This module might be entirely outdated.
+ * Clarify w/ @Manou.
+ */
+
+%whh-button-base {
+    display: inline-block;
+
+	padding: 20px 20px !important;
+	margin: 0px 10px 10px 0px !important;
+	border: none !important;
+
+    border-radius: 50px !important;
+
+    font-family: inherit !important;
+	font-size: 15px !important;
+	font-weight: 700 !important;
+	letter-spacing: normal !important;
+    text-transform: none !important;
+
+	cursor: pointer !important;
+
+    transition: 0.5s !important;
+}
+
+.button-whh,
+.form-whh .button {
+    @extend %whh-button-base;
+
+    background-color: #841f1d !important;
+    color: white !important;
+
+    &:hover {
+        background-color: #af2725 !important;
+    }
+}
+
+.button-whh-2 {
+    @extend %whh-button-base;
+
+	background-color: #fff;
+    color: black !important;
+
+	white-space: nowrap;
+
+    &:hover {
+        background-color: #fafafa;
+    }
+}
+
+.button-whh-3 {
+    @extend %whh-button-base;
+
+	background-color: #4dacc4;
+	color: #fff !important;
+
+	white-space: nowrap;
+
+    &:hover {
+        background-color: #a2ced9;
+    }
+}
+
+.donation-scale-box {
+	width: 100%;
+    max-width: unset !important;
+    height: 20px;
+
+    margin-top: 30px;
+    border-radius: 10px;
+
+	overflow: hidden;
+
+    background-color: #a3dfe5;
+}
+
+.donation-scale-content {
+	width: 0%;
+	max-width: unset !important;
+    height: 20px;
+
+	border-radius: 10px;
+
+    background-color: #841f1d;
+}
+
+.icon-list-whh {
+	display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    width: 100%;
+
+	margin-bottom: 12px;
+
+	font-size: 17px;
+    font-weight: unset;
+
+	color: #46bfd3;
+}
+
+.icon-list-span{
+	display: inline !important;
+}
+
+.icon-whh {
+	width: 80px;
+    height: 80px;
+
+	margin-right: 20px;
+}
+
+.logo-fahne-whh {
+    position: absolute;
+    top: -10px;
+    right: 50px;
+
+	width: 60px;
+	height: auto;
+
+    cursor: pointer;
+
+    transition: 0.5s;
+
+    &:hover {
+        top: 0px;
+        right: 50px;
+    }
+
+    .logo-fahne-whh-img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+%whh-abriss-base {
+    position: absolute;
+
+	width: 100%;
+    height: auto;
+}
+
+.whh-abriss-down {
+    @extend %whh-abriss-base;
+
+    bottom: -0.5px;
+}
+
+.whh-abriss-up {
+    @extend %whh-abriss-base;
+
+	top: 0px;
+}
