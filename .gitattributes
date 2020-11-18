@@ -1,6 +1,5 @@
 # export-ignore
 .gitattributes export-ignore
-build.sh
 composer.json export-ignore
 package.json export-ignore
 src export-ignore
