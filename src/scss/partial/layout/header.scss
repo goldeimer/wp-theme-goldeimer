@@ -11,7 +11,13 @@
         position: fixed !important;
     }
 
-    .responsive #top #main {
+    .responsive #top #wrap_all #main {
+        padding-top: 90px !important;
+    }
+}
+
+@include breakpoint.down(smd) {
+    .responsive #top #wrap_all #main {
         padding-top: 80px !important;
     }
 }

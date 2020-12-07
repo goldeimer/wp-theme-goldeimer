@@ -11,8 +11,10 @@
         @return 480;
     } @else if $breakpoint == sm or $breakpoint == small {
         @return 600;
+    } @else if $breakpoint == smd or $breakpoint == small-medium {
+        @return 768;
     } @else if $breakpoint == md or $breakpoint == medium {
-        @return 960;
+        @return 990;
     } @else if $breakpoint == lg or $breakpoint == large {
         @return 1280;
     } @else if $breakpoint == xl or $breakpoint == extra-large {

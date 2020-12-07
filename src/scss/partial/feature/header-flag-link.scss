@@ -1,0 +1,28 @@
+@use '../../lib/breakpoint';
+
+a.goldeimer-header-flag-link {
+    display: block;
+
+    position: fixed;
+    right: 15%;
+
+    width: 60px;
+    height: 45px;
+
+    z-index: 1;
+
+    transition: transform 0.3s ease-out;
+    top: 70px;
+    transform: translateY(-10px);
+    &:hover {
+        transform: translateY(0);
+    }
+
+    @include breakpoint.down(md) {
+        top: 90px;
+    }
+
+    @include breakpoint.down(smd) {
+        top: 80px;
+    }
+}
