@@ -1,0 +1,16 @@
+{
+    "entrypoints": {
+        "wp-theme-goldeimer": {
+            "js": [
+                "js/goldeimer-runtime~wp-theme-goldeimer.cjs.js",
+                "js/goldeimer-wp-theme-goldeimer.cjs.js"
+            ],
+            "css": [
+                "css/wp-theme-goldeimer.css"
+            ]
+        }
+    },
+    "runtime~wp-theme-goldeimer.js": "js/goldeimer-runtime~wp-theme-goldeimer.cjs.js",
+    "wp-theme-goldeimer.css": "css/wp-theme-goldeimer.css",
+    "wp-theme-goldeimer.js": "js/goldeimer-wp-theme-goldeimer.cjs.js"
+}

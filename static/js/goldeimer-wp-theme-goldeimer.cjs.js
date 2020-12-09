@@ -1,0 +1,1 @@
+(self.webpackChunk_goldeimer_wp_theme_goldeimer=self.webpackChunk_goldeimer_wp_theme_goldeimer||[]).push([[641],{306:()=>{}},0,[[306,268]]]);
