@@ -10,6 +10,7 @@
             "dev-master": "0.2-dev"
         }
     },
+    "license": "BSD-2-Clause",
     "minimum-stability": "dev",
     "name": "goldeimer/wp-theme-goldeimer",
     "prefer-stable": true,
